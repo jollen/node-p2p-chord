@@ -5,6 +5,7 @@
     "test:core": "node tests/core.test.js",
     "test:lookup": "node tests/lookup.test.js",
     "test:maintenance": "node tests/maintenance.test.js",
-    "test": "npm run test:core && npm run test:lookup && npm run test:maintenance"
+    "test:churn": "node tests/churn.test.js",
+    "test": "npm run test:core && npm run test:lookup && npm run test:maintenance && npm run test:churn"
   }
 }

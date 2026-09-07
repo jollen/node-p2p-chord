@@ -3,7 +3,7 @@
 const assert = require('assert')
 const { IdentifierSpace } = require('../core/identifier')
 const { betweenOpen, betweenOpenClosed } = require('../core/interval')
-const { sortedUnique, successor } = require('../core/reference-ring')
+const { sortedUnique, successor, idealFingerTable } = require('../core/reference-ring')
 const { stabilizationPlan, firstLiveSuccessor, shouldAcceptPredecessor } = require('../core/maintenance')
 
 class Topology {
@@ -115,6 +115,18 @@ class Topology {
       if (!changed && this.isIdealRing()) return round
     }
     throw new Error('maintenance did not converge')
+  }
+
+  refreshFingers() {
+    const live = this.liveIds()
+    for (const id of live) this.get(id).fingers = idealFingerTable(this.space, live, id)
+  }
+
+  routingNode(id) {
+    const node = this.get(id)
+    if (!node || !node.live) return null
+    const successorId = firstLiveSuccessor(this.space, node, x => this.isLive(x))
+    return { id: node.id, successor: successorId, fingers: node.fingers || [] }
   }
 
   invariants() {
