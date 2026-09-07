@@ -5,5 +5,6 @@ module.exports = {
   ...require('./core/interval'),
   ...require('./core/finger-table'),
   ...require('./core/reference-ring'),
-  ...require('./core/lookup')
+  ...require('./core/lookup'),
+  ...require('./core/maintenance')
 }

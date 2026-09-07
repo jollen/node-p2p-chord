@@ -4,6 +4,7 @@
   "scripts": {
     "test:core": "node tests/core.test.js",
     "test:lookup": "node tests/lookup.test.js",
-    "test": "npm run test:core && npm run test:lookup"
+    "test:maintenance": "node tests/maintenance.test.js",
+    "test": "npm run test:core && npm run test:lookup && npm run test:maintenance"
   }
 }
