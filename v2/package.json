@@ -2,6 +2,8 @@
   "name": "node-p2p-chord-v2-core",
   "private": true,
   "scripts": {
-    "test": "node tests/core.test.js && node tests/lookup.test.js"
+    "test:core": "node tests/core.test.js",
+    "test:lookup": "node tests/lookup.test.js",
+    "test": "npm run test:core && npm run test:lookup"
   }
 }
