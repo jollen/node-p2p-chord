@@ -7,5 +7,6 @@ module.exports = {
   ...require('./core/reference-ring'),
   ...require('./core/lookup'),
   ...require('./core/maintenance'),
-  ...require('./core/ownership')
+  ...require('./core/ownership'),
+  ...require('./transport')
 }
