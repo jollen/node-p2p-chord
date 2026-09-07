@@ -1,0 +1,7 @@
+{
+  "name": "node-p2p-chord-v2-core",
+  "private": true,
+  "scripts": {
+    "test": "node tests/core.test.js && node tests/lookup.test.js"
+  }
+}
