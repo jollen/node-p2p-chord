@@ -8,5 +8,6 @@ module.exports = {
   ...require('./core/lookup'),
   ...require('./core/maintenance'),
   ...require('./core/ownership'),
-  ...require('./transport')
+  ...require('./transport'),
+  ...require('./integration')
 }
